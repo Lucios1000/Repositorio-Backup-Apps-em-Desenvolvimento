@@ -1,0 +1,32 @@
+{
+  "name": "tkx-franca---dashboard-de-viabilidade-v.4.0",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "test:e2e:install": "playwright install --with-deps",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-is": "^19.2.3",
+    "recharts": "^3.6.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.35.0",
+    "@types/node": "^20.12.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "vite-plugin-pwa": "^0.21.1",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^2.1.8"
+  }
+}

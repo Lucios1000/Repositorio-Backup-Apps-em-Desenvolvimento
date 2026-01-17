@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TKX FRANCA - Dashboard Financeiro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+      body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #020617 50%, #0a0e1a 100%);
+        color: #f8fafc;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+      }
+
+      /* Estilos para Impressão / PDF */
+      @media print {
+        nav, header, button, .no-print, input[type="range"] {
+          display: none !important;
+        }
+        body, #root, .flex, .h-screen {
+          background: #020617 !important;
+          color: white !important;
+          height: auto !important;
+          overflow: visible !important;
+        }
+        main {
+          overflow: visible !important;
+          height: auto !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+        .bg-slate-900, .bg-slate-950, .bg-[#0f172a] {
+          background: #0f172a !important;
+          border: 1px solid #1e293b !important;
+          color: white !important;
+        }
+        canvas, .recharts-surface {
+          max-width: 100% !important;
+        }
+      }
+
+      /* Recharts: tornar fundos transparentes e tipografia legível */
+      .recharts-wrapper,
+      .recharts-surface {
+        background-color: transparent !important;
+      }
+      .recharts-default-tooltip {
+        background-color: rgba(2, 6, 23, 0.95) !important;
+        border: 1px solid #1e293b !important;
+        color: #e5e7eb !important;
+      }
+      .recharts-tooltip-wrapper {
+        background: transparent !important;
+        filter: none !important;
+      }
+      .recharts-legend-item-text {
+        color: #e5e7eb !important;
+        fill: #e5e7eb !important;
+      }
+      .recharts-cartesian-grid-horizontal line,
+      .recharts-cartesian-grid-vertical line {
+        stroke: #1f2937 !important;
+      }
+        /* Evita área de hover branca: torna o cursor transparente */
+        .recharts-tooltip-cursor {
+          fill: transparent !important;
+          stroke: transparent !important;
+        }
+        /* Efeito 3D intensificado nas barras via drop-shadow duplo */
+        .recharts-rectangle {
+          filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6)) drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+        }
+        /* Adiciona brilho sutil nas bordas superiores para simular iluminação */
+        .recharts-bar-rectangle {
+          filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6)) drop-shadow(0 -1px 2px rgba(255,255,255,0.1));
+        }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+  </body>
+</html>
